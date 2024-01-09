@@ -37,7 +37,6 @@ export const login = async (
     if (!existingUser.password) {
         return { error: "Account created with different provider!" }
     }
-
     // Check if password matches
     const passwordsMatch = await bcrypt.compare(
         password,
