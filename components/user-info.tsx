@@ -61,7 +61,9 @@ const UserInfo = ({
                     </p>
                     <p className="truncate text-xs max-w-[180px] font-mono p-1 bg-slate-100 rounded-md">
 
-                        <Badge variant={user?.isTwoFactorEnabled ? "success": "destructive"}>
+
+                        {/* ERROR WITH DOM NOT SAME WHAT RENDERED ON SERVER */}
+                        <Badge variant={user?.isTwoFactorEnabled ? "success" : "destructive"}> 
                             {user?.isTwoFactorEnabled ? "ON" : "OFF"}
                         </Badge>
 

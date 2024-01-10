@@ -21,9 +21,6 @@ const UserButton = () => {
             <DropdownMenuTrigger>
                 <Avatar> 
                     <AvatarImage src={user?.image || undefined} alt="@shadcn" />
-                    {/* <AvatarFallback className="bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-500 to-red-800">
-                        <FaUser />
-                    </AvatarFallback> */}
                     <AvatarFallback className="bg-black">
                         <FaUser className="text-white" />
                     </AvatarFallback>
