@@ -163,7 +163,7 @@ const LoginForm = () => {
                     {
                         showTwoFactor && (
                             <div className="flex justify-center items-center">
-                                <p className="font-normal text-sm">Didn't receive a code? </p>
+                                <p className="font-normal text-sm">Didn&apos;t receive a code? </p>
                                 <Button
                                     size="lg"
                                     type="submit"
