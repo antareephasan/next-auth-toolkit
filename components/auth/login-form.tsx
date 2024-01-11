@@ -52,6 +52,7 @@ const LoginForm = () => {
             login(values, callbackUrl)
                 .then((data) => {
                     if (data?.error) {
+                        form.resetField("code");
                         setError(data?.error);
                     }
                     if (data?.success) {
