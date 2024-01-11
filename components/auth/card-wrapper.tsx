@@ -13,6 +13,7 @@ interface CardWrapperPops {
     backButtonLabel: string;
     backButtonHref: string;
     showSocial?: boolean;
+    hideBackButton?: boolean;
 }
 
 
@@ -22,6 +23,7 @@ const CardWrapper = ({
     backButtonLabel,
     backButtonHref,
     showSocial,
+    hideBackButton=false,
 }: CardWrapperPops) => {
     return (
         <Card className="w-[400px] shadow-md">
@@ -38,10 +40,12 @@ const CardWrapper = ({
             )}
 
             <CardFooter>
-                <BackButtton 
-                    label={backButtonLabel}
-                    href={backButtonHref}
-                />
+                {!hideBackButton && (
+                    <BackButtton
+                        label={backButtonLabel}
+                        href={backButtonHref}
+                    />
+                )}
 
             </CardFooter>
         </Card>

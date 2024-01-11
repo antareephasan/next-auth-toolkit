@@ -27,6 +27,7 @@ import Link from "next/link";
 
 const LoginForm = () => {
     const searchParams = useSearchParams();
+    const callbackUrl = searchParams.get("callbackUrl");
     const urlError = searchParams.get("error") === "OAuthAccountNotLinked"
         ? "Email already in use with different provider!"
         : "";
@@ -48,7 +49,7 @@ const LoginForm = () => {
         setError("");
         setSuccess("");
         startTransition(() => {
-            login(values)
+            login(values, callbackUrl)
                 .then((data) => {
                     if (data?.error) {
                         setError(data?.error);
@@ -70,7 +71,8 @@ const LoginForm = () => {
             headerLabel="Welcome back"
             backButtonLabel="Don't have an account?"
             backButtonHref="/auth/register"
-            showSocial
+            showSocial={showTwoFactor? false : true}
+            hideBackButton={showTwoFactor ? true: false}
         >
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
